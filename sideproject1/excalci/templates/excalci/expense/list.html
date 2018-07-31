@@ -1,0 +1,14 @@
+{% extends "excalci/base.html" %}
+
+{% block title %}My Expense Blog{% endblock %}
+
+{% block content %}
+    <h1>My Expenses</h1>
+    {% for expense in expenses %}
+        <h2><a href="{{ expense.get_absolute_url }}">{{ expense.expense_name }}</a></h2>
+        <p class="date">Billed On {{ expense.expense_created }} by {{ expense.expense_user }}</p>
+        {{ expense.expense_description|truncatewords:30|linebreaks }}
+    {% endfor %}
+
+    {% include "pagination.html" with page=page_obj %}
+{% endblock %}

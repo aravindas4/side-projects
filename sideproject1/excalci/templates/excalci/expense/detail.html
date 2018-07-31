@@ -1,0 +1,10 @@
+{% extends "excalci/base.html" %}
+
+{% block title %}{{ expense.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ expense.expense_name }}</h1>
+    <p class="date">Billed on {{ expense.expense_created }} by {{ expense.expense_user }}</p>
+    <h2>Billed at {{expense.expense_amount}} </h2>
+    {{ expense.expense_description|linebreaks }}
+{% endblock %}

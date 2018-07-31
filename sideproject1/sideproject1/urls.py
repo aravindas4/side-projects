@@ -17,6 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^excalci/', include('excalci.urls')),
+    url(r'^excalci/', include('excalci.urls', namespace='excalci', app_name='excalci'),),
     url(r'^admin/', admin.site.urls),
 ]

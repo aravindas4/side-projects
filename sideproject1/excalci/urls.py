@@ -2,8 +2,8 @@ from django.conf.urls import url
 
 from . import views
 
-app_name = 'expense'
+#app_name = 'expense'
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^(?P<expense_id>[0-9]+)/$', views.detail, name='detail')
+    url(r'^expense/$', views.ExpenseListView.as_view(), name='expense_list'),
+    url(r'^expense/(?P<expense_id>[0-9]+)/$', views.expense_detail, name='expense_detail')
 ]
